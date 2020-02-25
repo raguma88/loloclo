@@ -87,8 +87,7 @@ public class HomePage {  //создаем класс
 
     public Boolean checkRememberMeCheckBox() {
         driver.findElement(logInButton).click();
-        Boolean checkbox = driver.findElement(rememberMeCheckbox).isSelected();
-        return checkbox;
+        return driver.findElement(rememberMeCheckbox).isSelected();
     }
 
     public void checkWantGetNewsCheckBox() {
