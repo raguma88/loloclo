@@ -1,27 +1,8 @@
-import org.junit.*;
-import org.junit.After;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.junit.Assert;
+import org.junit.Test;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import java.util.concurrent.TimeUnit;
 
-
-public class HomePageTest {
-
-    public WebDriver driver;
-    public HomePage homePage;
-
-    @Before
-    public void setUp() {
-        //System.setProperty("webdriver.gecko.driver", "/home/ralfidze/Documents/Gulnara/Intellij/drivers/geckodriver");
-        System.setProperty("webdriver.chrome.driver" ,"/home/ralfidze/Documents/Gulnara/Intellij/drivers/chromedriver");
-        //driver = new FirefoxDriver();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://loloclo.ru");
-        homePage = new HomePage(driver);
-    }
+public class HomePageTest extends TestBase {
 
     @Test
     public void openBabiesPageTest() {
@@ -32,8 +13,8 @@ public class HomePageTest {
 
     @Test
     public void signInTest() {
-        homePage.registration("username18", "test18@mail.ru", "181882921", "181882921");
-        WebDriverWait wait = new WebDriverWait(driver, 5);
+        homePage.registration("username19", "test19@mail.ru", "191882921", "191882921");
+        WebDriverWait wait = new WebDriverWait(popup.driver, 5);
         String logOutButtonText = homePage.checkLogOutButtonIsPresent();
         Assert.assertEquals("ВЫЙТИ", logOutButtonText);
     }
@@ -49,7 +30,7 @@ public class HomePageTest {
        public void searchItemTest(){
         homePage.clickSearchButton();
         homePage.searchItem("боди");
-        WebDriverWait wait1 = new WebDriverWait(driver, 10);
+        WebDriverWait wait = new WebDriverWait(popup.driver, 10);
         String searchResultText = homePage.getSearchResultText();
         Assert.assertEquals("Все результаты", searchResultText);
     }
@@ -58,11 +39,6 @@ public class HomePageTest {
     public void checkRememberMeCheckBoxTest() {
         Boolean checkbox = homePage.checkRememberMeCheckBox();
         Assert.assertTrue(checkbox);
-    }
-
-    @After
-    public void tearDown() {
-        driver.quit();
     }
 }
 

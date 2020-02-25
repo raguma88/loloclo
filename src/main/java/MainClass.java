@@ -7,6 +7,7 @@ public class MainClass {
     static WebDriver driver;
 
     public static void main(String[] args) {
+
         System.setProperty("webdriver.gecko.driver" ,"/home/ralfidze/Documents/Gulnara/Intellij/drivers/geckodriver");
         //System.setProperty("webdriver.chrome.driver" ,"/home/ralfidze/Documents/Гульнарочки/Intellij/drivers/chromedriver");
 
@@ -21,5 +22,9 @@ public class MainClass {
         PantsPage pantsPage = new PantsPage(driver);
 
         driver.close();
+
+
+
+
     }
 }

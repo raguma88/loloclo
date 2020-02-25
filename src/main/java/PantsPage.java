@@ -16,7 +16,6 @@ public class PantsPage {
     private By addedItemText = By.xpath("//span[text()='Товар добавлен в корзину!']");
     private By colorList = By.xpath("//a[@title='%$']");
     private By sizeList = By.xpath("//a[@data-size='%$']");
-    private By buttonInModalPopupAboutCoockies = By.xpath("//button[text()='Хорошо']");
 
     public String getHeadingText() {
         return driver.findElement(headingText).getText();
@@ -45,11 +44,5 @@ public class PantsPage {
     public PantsPage buyItem() {
         driver.findElement(buyButton).click();
         return this;
-    }
-
-    public void closeModalPopUpAboutCoockies() {
-        if(driver.findElements(By.xpath("//div[@class='modal_popup_sessid_box show']")).size() > 0) {
-            driver.findElement(buttonInModalPopupAboutCoockies).click();
-        }
     }
 }
