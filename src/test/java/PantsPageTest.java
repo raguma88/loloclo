@@ -5,7 +5,7 @@ public class PantsPageTest extends TestBase {
 
     @Test
     public void addItemtoCartTest() {
-        homePage.goToPantsPage();
+        goToPantsPage();
         pantsPage.chooseColor("Голубой");
         popup.closeModalPopUpAboutCoockies();
         popup.closeJivoChat();

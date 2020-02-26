@@ -13,8 +13,8 @@ public class HomePageTest extends TestBase {
 
     @Test
     public void signInTest() {
-        homePage.registration("username19", "test19@mail.ru", "191882921", "191882921");
-        WebDriverWait wait = new WebDriverWait(popup.driver, 5);
+        homePage.registration("username21", "test21@mail.ru", "211882921", "211882921");
+        WebDriverWait wait = new WebDriverWait(driver, 5);
         String logOutButtonText = homePage.checkLogOutButtonIsPresent();
         Assert.assertEquals("ВЫЙТИ", logOutButtonText);
     }
@@ -30,7 +30,7 @@ public class HomePageTest extends TestBase {
        public void searchItemTest(){
         homePage.clickSearchButton();
         homePage.searchItem("боди");
-        WebDriverWait wait = new WebDriverWait(popup.driver, 10);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         String searchResultText = homePage.getSearchResultText();
         Assert.assertEquals("Все результаты", searchResultText);
     }

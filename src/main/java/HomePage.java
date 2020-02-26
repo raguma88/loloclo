@@ -12,7 +12,6 @@ public class HomePage {  //создаем класс
     } //создаем конструктор класса
 
     private By babiesButton = By.xpath("//div/ul/li[1]/a/span[1]"); //объявляем переменную типа By и присоавиваем ее значение локатора по XPath
-    private By pantsButton = By.xpath("//div[@class='item-wrapper']//a[text()='Штанишки']");
     private By logInButton = By.xpath("//a[@class='f_auth']");
     private By logInButtonInForm = By.xpath("//div[@id='ui-id-1']//input[@name='Login']");
     private By signInButton = By.xpath("//a[text()='зарегистрироваться']");
@@ -30,11 +29,6 @@ public class HomePage {  //создаем класс
     private By rememberMeCheckbox = By.xpath("//input[@id='USER_REMEMBER']");
     private By wantGetNewsCheckBox = By.xpath("//input[@id='USER_PERSONAL_NOTES']");
 
-    public HomePage goToPantsPage () {
-        driver.findElement(babiesButton).click();
-        driver.findElement(pantsButton).click();
-        return this;
-    }
 
     public BabiesPage clickBabiesButton() {  //создаем метод типа BabiesPage
         driver.findElement(babiesButton).click(); //обращаемся к driver и вызываем методы библиотеки WebDriver, передаем в метод атрибут babiesButton
