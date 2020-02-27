@@ -7,6 +7,7 @@ public class PopupWindowsManager {
     public PopupWindowsManager(WebDriver driver) {
         this.driver = driver;
     }
+
     private By jivoChat = By.xpath("//jdiv[text()='Вы можете мне помочь?']");
     private By closeJivoChatButton = By.xpath("//jdiv[@class='closeIcon_1U']");
     private By buttonInModalPopupAboutCoockies = By.xpath("//button[text()='Хорошо']");

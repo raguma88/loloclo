@@ -9,12 +9,10 @@ import java.util.concurrent.TimeUnit;
 public class TestBase {
 
     public PopupWindowsManager popup;
+    public NavigationHelper navigate;
     public WebDriver driver;
     public HomePage homePage;
     public PantsPage pantsPage;
-
-    private By babiesButton = By.xpath("//div/ul/li[1]/a/span[1]");
-    private By pantsButton = By.xpath("//div[@class='item-wrapper']//a[text()='Штанишки']");
 
     @Before
     public void setUp() {
@@ -26,14 +24,9 @@ public class TestBase {
         driver.manage().window().maximize();
         driver.get("https://loloclo.ru");
         popup = new PopupWindowsManager(driver);
+        navigate = new NavigationHelper(driver);
         homePage = new HomePage(driver);
         pantsPage = new PantsPage(driver);
-    }
-
-    public TestBase goToPantsPage () {
-        driver.findElement(babiesButton).click();
-        driver.findElement(pantsButton).click();
-        return this;
     }
 
     @After

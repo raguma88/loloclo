@@ -9,14 +9,9 @@ public class BabiesPage {
     }
 
     private By headingText = By.xpath("//div/h1[text()='Одежда для новорожденных']");
-    private By pantsButton = By.xpath("//div[@class='title']/a[text()='Штанишки']");
 
     public String getHeadingText() {
         return driver.findElement(headingText).getText();
     }
 
-    public PantsPage pantsPage() {
-        driver.findElement(pantsButton);
-        return new PantsPage(driver);
-    }
 }
