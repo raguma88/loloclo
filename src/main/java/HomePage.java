@@ -56,7 +56,10 @@ public class HomePage {  //создаем класс
 
     public HomePage logIn(String email, String password) {
         driver.findElement(logInButton).click();
-        driver.findElement(emailFieldInForm).sendKeys(email);
+        String existingText = driver.findElement(emailFieldInForm).getAttribute("value");
+        if (! email.equals(existingText)) {
+            driver.findElement(emailFieldInForm).sendKeys(email);
+        }
         driver.findElement(passwordFieldForLogin).sendKeys(password);
         driver.findElement(logInButtonInForm).click();
         return this;

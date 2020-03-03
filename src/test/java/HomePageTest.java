@@ -1,4 +1,5 @@
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -13,7 +14,7 @@ public class HomePageTest extends TestBase {
 
     @Test
     public void signInTest() {
-        homePage.registration("username21", "test21@mail.ru", "211882921", "211882921");
+        homePage.registration("username22", "test22@mail.ru", "221882921", "221882921");
         WebDriverWait wait = new WebDriverWait(driver, 5);
         String logOutButtonText = homePage.checkLogOutButtonIsPresent();
         Assert.assertEquals("ВЫЙТИ", logOutButtonText);
